@@ -1,8 +1,37 @@
+
+
 # 🗂️ Task Management App
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=flat&logo=vercel&logoColor=white)](https://your-vercel-url.vercel.app/)
 
 A full-featured task management application built using **React**, **Redux Toolkit**, **Material-UI**, and **Node.js/Express**. The app offers task tracking, a dashboard with charts, customizable table views, and column configurations.
 
 ---
+## ✨ Features
+
+### Table View
+- Infinite scroll
+- Search by title
+- Filter by status (`All`, `Pending`, `Completed`, `Overdue`)
+- Drag & drop to reorder visible columns
+- Toggle column visibility
+- Task detail drawer
+
+### Dashboard View
+- Date range selection for analytics
+- Completed Tasks per Day (Bar Chart)
+- Tasks Due per Day (Line Chart)
+- Estimated Hours (Pie Chart)
+
+### Redux Store
+- Separation between table data and dashboard data
+- Actions: `fetchTasks`, `fetchDashboardTasks`, `setSearchQuery`, `setSelectedStatus`
+- Selectors: `selectFilteredTasks`, `selectDashboardTasks`, etc.
+
+---
+
+## 🚀 Live Demo
+
+Visit the live application at: [https://task-management-uwu5.vercel.app](https://task-management-uwu5.vercel.app)
 
 ## 🔧 Tech Stack
 
@@ -56,29 +85,6 @@ task-management-app-main/
 ├── .gitignore                        # Git ignored files
 └── README.md                         # Project documentation
 ```
----
-
-## ✨ Features
-
-### Table View
-- Infinite scroll
-- Search by title
-- Filter by status (`All`, `Pending`, `Completed`, `Overdue`)
-- Drag & drop to reorder visible columns
-- Toggle column visibility
-- Task detail drawer
-
-### Dashboard View
-- Date range selection for analytics
-- Completed Tasks per Day (Bar Chart)
-- Tasks Due per Day (Line Chart)
-- Estimated Hours (Pie Chart)
-
-### Redux Store
-- Separation between table data and dashboard data
-- Actions: `fetchTasks`, `fetchDashboardTasks`, `setSearchQuery`, `setSelectedStatus`
-- Selectors: `selectFilteredTasks`, `selectDashboardTasks`, etc.
-
 ---
 
 ## ⚙️ Setup Instructions
