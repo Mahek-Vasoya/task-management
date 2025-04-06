@@ -104,7 +104,7 @@ node server.js
 
 ### 3. Start Frontend Server
 ```bash
-cd ../client
+cd client
 npm install
 npm start
 ```
