@@ -4,6 +4,7 @@ import { CssBaseline, ThemeProvider, CircularProgress, Box } from '@mui/material
 import { getTheme } from './theme/theme';
 import Header from './components/Header/Header';
 import { useInitApp } from './hooks/useInitApp';
+import ScrollController from './components/ScrollController';
 
 // Lazy-loaded views
 const HomePage = lazy(() => import('./components/HomePageView/HomePage'));
@@ -16,6 +17,7 @@ const App = () => {
   const [error, setError] = useState(null);
 
   useInitApp(setLoading, setError);
+
 
   const toggleTheme = () => {
     const nextTheme = themeMode === 'light' ? 'dark' : 'light';
@@ -43,6 +45,7 @@ const App = () => {
     <ThemeProvider theme={getTheme(themeMode)}>
       <CssBaseline />
       <Router>
+        <ScrollController />
         <Header themeMode={themeMode} toggleTheme={toggleTheme} />
         <Suspense fallback={
           <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50vh' }}>
