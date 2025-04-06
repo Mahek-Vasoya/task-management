@@ -1,86 +1,109 @@
-# Getting Started with Create React App
+# 🗂️ Task Management App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-featured task management application built using **React**, **Redux Toolkit**, **Material-UI**, and **Node.js/Express**. The app offers task tracking, a dashboard with charts, customizable table views, and column configurations.
 
-## Getting Started
+---
 
-To get started with this project, follow these steps:
+## 🔧 Tech Stack
 
-1. Clone the repository:
-  ```bash
-  git clone <repository-url>
-  ```
-2. Navigate into the project directory:
-  ```bash
-   cd <project-name>
-  ```
-3. Install dependencies:
-  ```bash
-   npm install
-  ```
-## Available Scripts
+### 🖥️ Client (Frontend)
+- [React](https://reactjs.org/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Material-UI](https://mui.com/)
+- [Recharts](https://recharts.org/)
+- [DnD Kit](https://dndkit.com/) – for column drag and drop
+- [React Infinite Scroll Component](https://www.npmjs.com/package/react-infinite-scroll-component)
+- [React Router DOM](https://reactrouter.com/)
+- [Date-fns](https://date-fns.org/)
 
-In the project directory, you can run:
+### ⚙️ Server (Backend)
+- [Node.js](https://nodejs.org/)
+- [Express.js](https://expressjs.com/)
+- CORS enabled
+- JSON file as data source
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📁 Project Structure
+```bash
+task-management-app-main/
+├── client/                           # React Frontend
+│   ├── .env                          # Environment variables
+│   ├── public/                       # Static assets
+│   ├── package.json                  # Project config and dependencies
+│   └── src/
+│       ├── components/               # UI Components
+│       │   ├── DashboardView/        # Dashboard-related charts and views
+│       │   ├── TableView/            # Task table, filters, modals
+│       │   └── Header/               # App header with nav and theme switch
+│       ├── hooks/                    # Reusable custom hooks
+│       │   └── useInitApp.js         # Initializes data on app load
+│       ├── store/                    # Redux Toolkit store and slices
+│       │   └── dataSlice.js          # Main state management logic
+│       ├── theme/                    # Theme definitions (MUI)
+│       │   └── theme.js              # Light/Dark mode configs
+│       ├── utils/                    # Utilities (filters, formatters, etc.)
+│       │   ├── columnUtils.js        # LocalStorage for column config
+│       │   └── dashboardUtils.js     # Data transformation for charts
+│       ├── App.js                    # Main app component with routing
+│       ├── index.js                  # Entry point
+│       └── App.test.js               # Tests (if applicable)
+│
+├── server/                           # Node.js + Express Backend
+│   ├── server.js                     # Express server
+│   ├── mock_tasks.json               # Mock data (1000+ tasks)
+│   └── package.json                  # Project config and dependencies
+├── .gitignore                        # Git ignored files
+└── README.md                         # Project documentation
+```
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ✨ Features
 
-### `npm test`
+### Table View
+- Infinite scroll
+- Search by title
+- Filter by status (`All`, `Pending`, `Completed`, `Overdue`)
+- Drag & drop to reorder visible columns
+- Toggle column visibility
+- Task detail drawer
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Dashboard View
+- Date range selection for analytics
+- Completed Tasks per Day (Bar Chart)
+- Tasks Due per Day (Line Chart)
+- Estimated Hours (Pie Chart)
 
-### `npm run build`
+### Redux Store
+- Separation between table data and dashboard data
+- Actions: `fetchTasks`, `fetchDashboardTasks`, `setSearchQuery`, `setSelectedStatus`
+- Selectors: `selectFilteredTasks`, `selectDashboardTasks`, etc.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## ⚙️ Setup Instructions
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/task-management-app.git
+cd task-management-app-main
+```
 
-### `npm run eject`
+### 2. Start Backend Server
+```bash
+cd server
+npm install
+node server.js
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 3. Start Frontend Server
+```bash
+cd ../client
+npm install
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 3. Environment File
+Create a .env file inside client/:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+REACT_APP_API_BASE_URL=http://localhost:8000/api
