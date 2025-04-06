@@ -1,7 +1,7 @@
 import React from 'react';
 
 const TableComponent = ({ columns, filteredTasks, setSelectedTask, setOpenDrawer }) => {
-    console.log(filteredTasks)
+    // console.log(filteredTasks)
     return (
         <table className="table">
             <thead>
